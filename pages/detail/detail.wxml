@@ -1,0 +1,15 @@
+<view class="title">
+  <text>{{shop.name}}</text>
+  <text>{{shop.address}}</text>
+</view>
+<view class="food-box">
+  <view class="food-classify left">
+      <view style="display:block;color:red"  wx:for="{{foodList}}" wx:for-item="items" wx:key="x" wx:for-index="i" bindtap="scrollToViewFn" data-id="{{i}}">{{items.name}}</view>
+  </view>
+  <scroll-view class="food-list right" scroll-y="true" scroll-with-animation="true" scroll-into-view="{{toView}}">
+    <view wx:for="{{foodList}}" wx:for-item="items" wx:key="y" wx:for-index="id">
+    <view style="color:orange" id="classify{{id}}">{{items.name}}</view>
+    <view style="display:block" wx:for="{{items.foods}}" wx:for-item="item" wx:key="z">{{item.name}}</view>
+    </view>
+  </scroll-view>
+</view>

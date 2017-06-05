@@ -19,3 +19,77 @@
 .usermotto {
   margin-top: 200px;
 }
+.eat-what {
+  line-height: 34px;
+  font-size: 16px;
+  margin-top: 150px;
+}
+
+.view-bottom{
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.view-bottom button {
+  line-height: 26px;
+  font-size: 12px;
+}
+
+.food-list{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 210px;
+  box-sizing: border-box;
+  /*display: none;*/
+}
+
+.food-list .mask {
+  width: 100%;
+  height: 100%;
+  opacity: .3;
+  position: absolute;
+  top: 0;
+}
+
+.food-list .food-list-box {
+  width: 80%;
+  margin: 0 auto;
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #fff;
+  z-index: 10;
+}
+
+.food-list .food-list-box .food-list-box-title {
+  text-align: center;
+  width: 100%;
+  display: block;
+  line-height: 1.8em;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: #ccc;
+  color: #fff;
+}
+
+.food-list .food-list-box .text {
+  font-size: 12px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+}
+
+.food-list .food-list-box-button {
+  width: 40%;
+  font-size: 12px;
+  line-height: 26px;
+  margin-top: 20px;
+}

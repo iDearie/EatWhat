@@ -1,0 +1,12 @@
+<view class="mask">
+  <view class="food-list-item" wx:for="{{_foodList}}"  wx:key="i" wx:for-item="i" style="top:{{i.posY}}px;left:{{i.posX}}px">
+  {{i.food}}
+  </view>
+</view>
+<view class="random">
+  <text>等下去</text>
+  <text class="choose" style="display:block">{{food}}</text>
+  <button class="button" bindtap="stopRandom" wx:if="{{!stop}}">就这么愉快的决定了!</button>
+  <button class="button" wx:if="{{stop}}" bindtap="startRandom">在纠结一次吧...</button>
+  <button class="button" wx:if="{{stop&&showNear}}" bindtap="showDetail">看看他家有什么好吃的</button>
+</view>

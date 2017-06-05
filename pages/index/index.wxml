@@ -4,7 +4,18 @@
     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <button class="eat-what" bindtap="bindViewChoose">等下吃什么呢</button>
+  <view class="view-bottom">
+    <button class="left" bindtap="bindCutFoodList">自定义选单</button>
+    <button class="right" bindtap="bindShowNear">查看附近的美食</button>
   </view>
+</view>
+
+<view class="food-list" hidden="{{foodListHide}}">
+  <view class="mask"></view>
+  <view class="food-list-box">
+    <text class="food-list-box-title">当前选单</text>
+    <textarea value="{{foodList}}" class="text" maxlength="10000"/>
+  </view>
+  <button class="food-list-box-button" bindtap="bindCutFoodList">嗯...就这些吧</button>
 </view>
