@@ -1,3 +1,9 @@
+<view class="shop-detail">
+  <view class="shop-detail-mask"></view>
+  <view class="title">{{shop.name}}</view>
+  <view class="address">地址：{{shop.address}}</view>
+  <view class="address">公告：{{shop.promotion_info||"商家暂无公告"}}</view>
+</view>
 <scroll-view class="content" scroll-into-view="{{toView}}" scroll-y="true" scroll-with-animation="true">  
   <view wx:for="{{foodList}}">  
     <view class="address_top" id="classify{{item.id}}">{{item.name}}</view>  
@@ -10,4 +16,4 @@
   <block wx:for="{{foodList}}" wx:for-item="items" wx:key="x" wx:for-index="i" bindtap="scrollToViewFn" data-id="{{i}}">
     <view class="orientation_city" bindtap="scrollToViewFn" data-id="{{items.id}}">{{items.name}}</view>  
   </block>  
-</view> 
+</view>
