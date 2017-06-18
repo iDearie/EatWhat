@@ -23,6 +23,7 @@
   line-height: 34px;
   font-size: 16px;
   margin-top: 150px;
+  opacity: 0;
 }
 
 .view-bottom{

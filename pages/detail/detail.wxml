@@ -17,3 +17,5 @@
     <view class="orientation_city" bindtap="scrollToViewFn" data-id="{{items.id}}">{{items.name}}</view>  
   </block>  
 </view>
+<button class="make-sure" bindtap="bindMakeSure">就选这家了...</button>
+<button class="back" bindtap="bindBack">再去纠结下...</button>

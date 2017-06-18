@@ -1,12 +1,12 @@
 <!--index.wxml-->
 <view class="container">
   <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover" style="width:128rpx;height:128rpx" animation="{{tipAnimationData}}"></image>
+    <text class="userinfo-nickname" style="height:40rpx;margin-top:10rpx;">{{userInfo.nickName}}</text>
   </view>
-  <button class="eat-what" bindtap="bindViewChoose">等下吃什么呢</button>
+  <button class="eat-what" bindtap="bindViewChoose" animation="{{animationData}}">等下吃什么呢</button>
   <view class="view-bottom">
-    <button class="left" bindtap="bindCutFoodList">自定义选单</button>
+    <button class="left" bindtap="bindCutFoodList" animation="{{dropLetAnimation}}">自定义选单</button>
     <button class="right" bindtap="bindShowNear">查看附近的美食</button>
   </view>
 </view>
@@ -15,7 +15,7 @@
   <view class="mask"></view>
   <view class="food-list-box">
     <text class="food-list-box-title">当前选单</text>
-    <textarea value="{{foodList}}" class="text" maxlength="10000"/>
+    <textarea value="{{foodList}}" class="text" maxlength="10000" hidden="{{foodListHide}}"/>
   </view>
   <button class="food-list-box-button" bindtap="bindCutFoodList">嗯...就这些吧</button>
 </view>

@@ -1,11 +1,13 @@
 //index.js
+var animationstore = require('../../animation/animation.js');
 //获取应用实例
 var app = getApp()
 Page({
   data: {
     foodList: null,
     userInfo: {},
-    foodListHide:true
+    foodListHide:true,
+    timer:null
   },
   //事件处理函数
   bindViewTap: function() {
@@ -72,7 +74,6 @@ Page({
     })
   },
   onLoad: function () {
-    console.log('onLoad');
     var that = this;
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function(userInfo){
@@ -85,47 +86,39 @@ Page({
     })
   },
   onShow: function () {
+    var that = this;
+    var tipAnimation = wx.createAnimation({
+      duration: 500,
+      timingFunction: 'ease'
+    })
+    this.data.timer = setTimeout(function () {
+      tipAnimation.translateX(20).translateY(-10).step()
+        .translateY(10).step()
+        .translateX(-20).step()
+        .translateY(-10).step()
+        .translateX(0).translateY(0).step();
+      that.setData({
+        tipAnimationData: tipAnimation.export()
+      })
+    },5000)
+
+    animationstore.dropLet(that);
+    
     var animation = wx.createAnimation({
       duration: 1000,
       timingFunction: 'ease',
     })
-
-    this.animation = animation
-
-    animation.opacity(0);
+    animation.scale(2, 2).step()
 
     this.setData({
       animationData: animation.export()
     })
 
     setTimeout(function () {
-      animation.step()
+      animation.opacity(1).scale(1, 1).step()
       this.setData({
         animationData: animation.export()
       })
     }.bind(this), 1000)
   },
-  // rotateAndScale: function () {
-  //   // 旋转同时放大
-  //   this.animation.rotate(45).scale(2, 2).step()
-  //   this.setData({
-  //     animationData: this.animation.export()
-  //   })
-  // },
-  // rotateThenScale: function () {
-  //   // 先旋转后放大
-  //   this.animation.rotate(45).step()
-  //   this.animation.scale(2, 2).step()
-  //   this.setData({
-  //     animationData: this.animation.export()
-  //   })
-  // },
-  // rotateAndScaleThenTranslate: function () {
-  //   // 先旋转同时放大，然后平移
-  //   this.animation.rotate(45).scale(2, 2).step()
-  //   this.animation.translate(100, 100).step({ duration: 1000 })
-  //   this.setData({
-  //     animationData: this.animation.export()
-  //   })
-  // }
 })
