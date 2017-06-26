@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
   <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover" style="width:128rpx;height:128rpx" animation="{{tipAnimationData}}"></image>
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover" style="width:128rpx;height:128rpx" animation="{{tipAnimationData}}" bindtouchmove="bindDragFun"></image>
     <text class="userinfo-nickname" style="height:40rpx;margin-top:10rpx;">{{userInfo.nickName}}</text>
   </view>
   <button class="eat-what" bindtap="bindViewChoose" animation="{{animationData}}">等下吃什么呢</button>

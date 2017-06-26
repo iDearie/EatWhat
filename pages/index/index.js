@@ -1,5 +1,7 @@
 //index.js
 var animationstore = require('../../animation/animation.js');
+
+
 //获取应用实例
 var app = getApp()
 Page({
@@ -73,6 +75,9 @@ Page({
       }
     })
   },
+  bindDragFun:function (e) {
+    console.log(e,this)
+  },
   onLoad: function () {
     var that = this;
     //调用应用实例的方法获取全局数据
@@ -101,8 +106,6 @@ Page({
         tipAnimationData: tipAnimation.export()
       })
     },5000)
-
-    animationstore.dropLet(that);
     
     var animation = wx.createAnimation({
       duration: 1000,

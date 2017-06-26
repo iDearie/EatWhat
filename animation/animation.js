@@ -24,7 +24,12 @@ function showAndHide(that) {
   console.log(1);
 }
 
+function DragFun(options) {
+
+}
+
 module.exports = {
   dropLet: dropLet,
-  showAndHide: showAndHide
+  showAndHide: showAndHide,
+  dragFun:DragFun
 }
